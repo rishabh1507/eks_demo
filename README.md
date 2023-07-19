@@ -24,6 +24,7 @@ Design a highly available and scalable containerised application on Amazon EKS. 
 3. Provide suggestions on how you would make this application more secure and cost-effective. -
 Rightnow the ekscluster uses 2 public and private subnet each. I will try to slim down the setup by only keeping 2 private subnets, nat gateway and will attach an ALB to access the application this will make the setup secure and cost effective. 
 Example sample
+```
 apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
@@ -61,5 +62,6 @@ NodeGroups:
   privateNetworking: true
   availabilityZones: ["ap-northeast-1c"]
 
+```
 
 Good luck! We look forward to seeing your work.
