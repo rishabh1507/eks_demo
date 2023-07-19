@@ -2,15 +2,23 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: dev-cluster
+  name: prodigal10
   region: ap-northeast-1
-  version: "1.23"
 
 vpc:
   cidr: 172.31.0.0/16
 
 managedNodeGroups:
-- name: dev-node
-  amiFamily: Ubuntu2004
-  instanceType: t2.micro
-  desiredCapacity: 2
+- name: prodigal-node1
+  instanceType: t3.small
+  minSize: 1
+  maxSize: 5  
+  desiredCapacity: 1
+  availabilityZones: ["ap-northeast-1a"] 
+
+- name: prodigal-node2
+  instanceType: t3.small
+  minSize: 1
+  maxSize: 5  
+  desiredCapacity: 1
+  availabilityZones: ["ap-northeast-1c"]
