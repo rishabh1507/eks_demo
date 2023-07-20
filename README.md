@@ -19,10 +19,16 @@ Design a highly available and scalable containerised application on Amazon EKS. 
 
 ## Deliverables:
 
-1. Complete setup by showcasing the application accessible from internet.- Done
+1. Complete setup by showcasing the application accessible from internet.- 
+a4a7184fd5a4e4806837c468be631766-1798140504.ap-northeast-1.elb.amazonaws.com  
+
 2. Link of a Github repo hosting the config files used to create the above setup. - Done
+https://github.com/rishabh1507/eks_demo.git
+
 3. Provide suggestions on how you would make this application more secure and cost-effective. -
-Rightnow the ekscluster uses 2 public and private subnet each. I will try to slim down the setup by only keeping 2 private subnets, nat gateway and will attach an ALB to access the application this will make the setup secure and cost effective. 
+Rightnow the ekscluster uses 2 public and private subnet each as a default. If we try to slim down the setup by only keeping 2 private subnets, nat gateway and attach an ALB to access the application. This setup is cost effective and secure as users access application alb and application gets data using NAT.
+
+
 Example sample
 ```
 apiVersion: eksctl.io/v1alpha5
